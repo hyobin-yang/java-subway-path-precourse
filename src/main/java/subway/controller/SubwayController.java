@@ -56,14 +56,14 @@ public class SubwayController {
     private void initializeTimeEdges(List<String> timeEdges){
         for (String rawTimeEdge : timeEdges){
             List<String> timeEdge = Arrays.asList(rawTimeEdge.split(DELIMITER));
-            subwayService.addTimeEdge(timeEdge.get(1), timeEdge.get(2), Integer.parseInt(timeEdge.get(3)));
+            subwayService.addTimeEdge(timeEdge.get(1), timeEdge.get(2), Double.parseDouble(timeEdge.get(3)));
         }
     }
 
     private void initializeDistanceEdges(List<String> distanceEdges){
         for (String rawDistanceEdge : distanceEdges){
             List<String> distanceEdge = Arrays.asList(rawDistanceEdge.split(DELIMITER));
-            subwayService.addDistanceEdge(distanceEdge.get(1), distanceEdge.get(2), Integer.parseInt(distanceEdge.get(3)));
+            subwayService.addDistanceEdge(distanceEdge.get(1), distanceEdge.get(2), Double.parseDouble(distanceEdge.get(3)));
         }
     }
 
@@ -82,6 +82,7 @@ public class SubwayController {
         outputView.showMainOptionMessage();
         outputView.showMainOption(MainOption.SEARCH_PATH.getOptionNumber(), MainOption.SEARCH_PATH.getOptionContent());
         outputView.showMainOption(MainOption.QUIT.getOptionNumber(), MainOption.QUIT.getOptionContent());
+        outputView.breakLine();
     }
 
     private MainOption chooseMainOption(){
@@ -92,6 +93,9 @@ public class SubwayController {
     private void searchPath(){
         showPathStandardOptionMessage();
         PathStandardOption standardOption = RetryHandler.retryWithReturn(this::chooseStandardOption);
+        if (standardOption.equals(PathStandardOption.BACK)){
+            run();
+        }
         String startStation = inputView.inputStartStation();
         String endStation = inputView.inputEndStation();
         if (standardOption.equals(PathStandardOption.DISTANCE)){
@@ -107,6 +111,8 @@ public class SubwayController {
         outputView.showPathStandardOptionMessage();
         outputView.showStandardOption(PathStandardOption.DISTANCE.getOptionNumber(), PathStandardOption.DISTANCE.getOptionContent());
         outputView.showStandardOption(PathStandardOption.TIME.getOptionNumber(), PathStandardOption.TIME.getOptionContent());
+        outputView.showStandardOption(PathStandardOption.BACK.getOptionNumber(), PathStandardOption.BACK.getOptionContent());
+        outputView.breakLine();
     }
 
     private PathStandardOption chooseStandardOption(){

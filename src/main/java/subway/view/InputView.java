@@ -24,4 +24,5 @@ public class InputView {
         System.out.println("## 도착역을 입력하세요.");
         return scanner.nextLine();
     }
+
 }

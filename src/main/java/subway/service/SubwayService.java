@@ -19,13 +19,13 @@ public class SubwayService {
         }
     }
 
-    public void addTimeEdge(String startStationName, String endStationName, Integer time){
+    public void addTimeEdge(String startStationName, String endStationName, double time){
         Station startStation = StationRepository.findStationByName(startStationName);
         Station endStation = StationRepository.findStationByName(endStationName);
         TimePathRepository.addEdge(startStation, endStation, time);
     }
 
-    public void addDistanceEdge(String startStationName, String endStationName, Integer distance){
+    public void addDistanceEdge(String startStationName, String endStationName, double distance){
         Station startStation = StationRepository.findStationByName(startStationName);
         Station endStation = StationRepository.findStationByName(endStationName);
         DistancePathRepository.addEdge(startStation, endStation, distance);
