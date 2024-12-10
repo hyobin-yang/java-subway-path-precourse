@@ -5,6 +5,8 @@ import java.util.List;
 public class OutputView {
 
     private static final String INFO = "[INFO]";
+    private static final String DISTANCE_UNIT = "km";
+    private static final String TIME_UNIT = "분";
 
     public void showMainOptionMessage(){
         System.out.println("## 메인 화면");
@@ -25,8 +27,8 @@ public class OutputView {
     public void showResult(double totalDistanceWeight, double totalTimeWeight, List<String> stations){
         System.out.println("## 조회 결과");
         System.out.println(INFO + " ---");
-        System.out.println(INFO + " 총 거리: " + Math.round(totalDistanceWeight) + "km");
-        System.out.println(INFO + " 총 소요 시간: " + Math.round(totalTimeWeight) + "분");
+        System.out.println(INFO + " 총 거리: " + Math.round(totalDistanceWeight) + DISTANCE_UNIT);
+        System.out.println(INFO + " 총 소요 시간: " + Math.round(totalTimeWeight) + TIME_UNIT);
         System.out.println(INFO + " ---");
         for (String station : stations){
             System.out.println(INFO + " " + station);

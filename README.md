@@ -45,14 +45,14 @@
 - 최소 시간에 따른 그래프 모델
 
 ### 주의점🚨
-- Application 클래스에 있는 Scanner를 사용하고 별도의 Scanner 객체를 만들지 않는다
-- 프로그래밍 요구사항 - Station, Line
+- Application 클래스에 있는 Scanner를 사용하고 별도의 Scanner 객체를 만들지 않는다 [✅]
+- 프로그래밍 요구사항 - Station, Line [✅]
   - Station, Line 클래스를 활용하여 지하철역과 노선을 구현해야 한다.
   - 제공하는 각 클래스의 기본 생성자를 추가할 수 없다.
   - 필드(인스턴스 변수)인 name의 접근 제어자 private을 변경할 수 없다.
   - 가능하면 setter 메소드(ex. setXXX)를 추가하지 않고 구현한다.
-- 프로그래밍 요구사항 - StationRepository, LineRepository
+- 프로그래밍 요구사항 - StationRepository, LineRepository [✅]
   - 작성된 메서드 수정 불가, 메서드 추가 가능
 - 서로 연결되지 않은 두 정점 사이의 최단경로를 계산하려는 경우, null이 반환
-  - 이에 대한 예외를 적절히 처리해서 NPE가 발생하지 않도록🚨
+  - 이에 대한 예외를 적절히 처리해서 NPE가 발생하지 않도록🚨 [✅]
 - 단위 상수화

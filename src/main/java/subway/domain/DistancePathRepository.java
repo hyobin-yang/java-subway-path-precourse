@@ -4,6 +4,7 @@ import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.WeightedMultigraph;
 
 public class DistancePathRepository {
+
     private static final WeightedMultigraph<Station, DefaultWeightedEdge> distancePath = new WeightedMultigraph(DefaultWeightedEdge.class);
 
     public static void addVertex(Station station){

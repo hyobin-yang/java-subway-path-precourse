@@ -136,5 +136,4 @@ public class SubwayController {
         outputView.showResult(resultDTO.getTotalDistanceWeight(), resultDTO.getTotalTimeWeight(), resultDTO.getStations());
     }
 
-
 }
